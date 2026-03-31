@@ -1,15 +1,21 @@
-import e, {Request, Response} from "express";
-import Config from "./config/config.js";
+import e from "express";
+import type { Request, Response } from "express";
+import config from "./config/config.ts";
+import userRoutes from "./routes/userRoutes.ts";
+
 const app = e();
 
-app.listen(Config.PORT, () =>
+app.listen(config.PORT, () =>
     {
-    console.log(`Servidor rodando na porta ${Config.PORT}`);
+    console.log(`Servidor rodando na porta ${config.PORT}`);
     }
 );
 
 app.get("/", (req : Request, res : Response) => 
     {
-    res.send(`Hello World! Rodando na porta ${Config.PORT}`);
+    res.send(`Hello World! Rodando na porta ${config.PORT}`);
     }
 );
+
+app.use(e.json())
+app.use(userRoutes)

@@ -1,8 +1,9 @@
-import { DataTypes, Model, CreationOptional } from '@sequelize/core';
+import { DataTypes, Model} from '@sequelize/core';
+import type { CreationOptional } from '@sequelize/core';
 
-import sequelize from "../config/db"
+import sequelize from "../config/db.ts"
 
-interface UserAttributes {
+export interface UserAttributes {
   username: string;
   email: string;
   passwordHash: string;

@@ -1,5 +1,10 @@
 export type CreateUserDTO = {
   username: string;
   email: string;
-  passwordHash: string;
+  password: string;
 };
+
+export type LoginUserDTO = {
+  email: string;
+  password: string
+}

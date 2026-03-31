@@ -1,22 +1,24 @@
-import { Request, Response } from "express";
-import { createUserService } from "../services/UserServices";
-import { CreateUserDTO } from "../utils/types/userDTO";
+import type { Request, Response } from "express";
+import { createUserService } from "../services/UserServices.ts";
+import type { CreateUserDTO } from "../utils/types/userDTO.ts"
+import type { LoginUserDTO } from "../utils/types/userDTO.ts";
 
 export const createUserController = async (req: Request, res: Response) => {
   try {
-    const { username, email, passwordHash } = req.body as CreateUserDTO;
+    const { username, email, password } = req.body as CreateUserDTO;
 
-    const user = await createUserService({
-      username,
-      email,
-      passwordHash
-    });
+    if (!username || !email || !password) {
+      return res.status(400).json({ error: "All spaces must be filled" });
+    }
 
-    return res.status(201).json(user);
+    const user = await createUserService({ username, email, password });
+
+    const { passwordHash, ...userWithoutPassword } = user.toJSON();
+
+    return res.status(201).json(userWithoutPassword);
 
   } catch (error: any) {
-    return res.status(400).json({
-      error: error.message
-    });
+    return res.status(400).json({ error: error.message });
   }
 };
+
