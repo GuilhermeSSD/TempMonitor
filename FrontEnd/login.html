@@ -1,34 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TempMonitor</title>
-    <link rel="stylesheet" href="./css/login.css">
-</head>
-<body>
-    <div>
-        <p>login</p>
-        <form action="">
-            <label for="login-email">login:</label>
-            <input type="email" name="login-email" id="login-email">
-            <label for="login-senha">senha:</label>
-            <input type="password" name="login-pass" id="login-pass">
-            <input type="button" value="Login">
-        </form>
-        <p>Register</p>
-        <form action="">
-            <label for="register-cpf">CPF:</label>
-            <input type="cpf" name="register-cpf" id="register-cpf">
-            <label for="register-name">Email:</label>
-            <input type="name" name="register-name" id="register-name">
-            <label for="register-email">login:</label>
-            <input type="email" name="register-email" id="register-email">
-            <label for="login-senha">senha:</label>
-            <input type="password" name="register-pass" id="register-pass">
-            <input type="button" value="Register">
-        </form>
-    </div>
-<script src="./javascript/login.js"/></script>
-</body>
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <header class="header">
+          <h1>TempMonitor</h1>
+          <p>Entre ou crie sua conta para continuar.</p>
+        </header>
+
+        <div class="forms">
+          <form id="login-form" class="form">
+            <h2>Login</h2>
+            <label for="login-email">Email</label>
+            <input
+              type="email"
+              name="login-email"
+              id="login-email"
+              autocomplete="email"
+              required
+            />
+
+            <label for="login-pass">Senha</label>
+            <input
+              type="password"
+              name="login-pass"
+              id="login-pass"
+              autocomplete="current-password"
+              required
+            />
+
+            <button type="submit" id="login-button">Entrar</button>
+            <p class="msg" id="login-msg" role="status"></p>
+          </form>
+
+          <form id="register-form" class="form">
+            <label for="register-name">Usuario</label>
+            <input
+              type="text"
+              name="register-name"
+              id="register-name"
+              autocomplete="username"
+              required
+            />
+
+            <label for="register-email">Email</label>
+            <input
+              type="email"
+              name="register-email"
+              id="register-email"
+              autocomplete="email"
+              required
+            />
+
+            <label for="register-pass">Senha</label>
+            <input
+              type="password"
+              name="register-pass"
+              id="register-pass"
+              autocomplete="new-password"
+              required
+            />
+
+            <button type="submit" id="register-button">Criar conta</button>
+            <p class="msg" id="register-msg" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./javascript/login.js" defer></script>
+  </body>
 </html>

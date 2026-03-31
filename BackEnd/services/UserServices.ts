@@ -28,6 +28,7 @@ export const createUserService = async (data: CreateUserDTO) => {
     email: data.email,
     passwordHash
   });
+  console.log(`Usuario com id ${user.id}, email ${user.email} e username ${user.username} Criado!`)
   return user;
 };
 
@@ -41,6 +42,8 @@ export const loginUserService = async (data: LoginUserDTO) => {
   const payload = {id: user.id, username: user.username, email: user.email}
 
   const token = jwt.sign(payload, config.JWT_KEY!)
+
+  console.log(`Usuario com id ${user.id} Logou!`)
 
   return { user: { id: user.id, username: user.username, email: user.email }, token };
 }
