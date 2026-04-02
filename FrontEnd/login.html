@@ -4,65 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TempMonitor</title>
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <main class="page">
-      <section class="card">
+      
         <header class="header">
           <h1>TempMonitor</h1>
-          <p>Entre ou crie sua conta para continuar.</p>
         </header>
-
-        <div class="forms">
-          <form id="login-form" class="form">
+        <section class="card">
+          <div class="forms">
+          <form id="login-form" class="form" style="border-bottom: 1px solid black;">
             <h2>Login</h2>
-            <label for="login-email">Email</label>
             <input
               type="email"
               name="login-email"
               id="login-email"
+              placeholder="Email:"
               autocomplete="email"
               required
             />
 
-            <label for="login-pass">Senha</label>
             <input
               type="password"
               name="login-pass"
               id="login-pass"
+              placeholder="Senha:"
               autocomplete="current-password"
               required
             />
 
             <button type="submit" id="login-button">Entrar</button>
-            <p class="msg" id="login-msg" role="status"></p>
+            <p class="msg" id="login-msg" role="status"
+            style="margin-bottom: 7px;"></p>
           </form>
 
+          
           <form id="register-form" class="form">
-            <label for="register-name">Usuario</label>
+            <h2>Cadastro</h2>
+          
             <input
               type="text"
               name="register-name"
               id="register-name"
+              placeholder="Usuario:"
               autocomplete="username"
               required
             />
 
-            <label for="register-email">Email</label>
             <input
               type="email"
               name="register-email"
               id="register-email"
+              placeholder="Email:"
               autocomplete="email"
               required
             />
 
-            <label for="register-pass">Senha</label>
+           
             <input
               type="password"
               name="register-pass"
               id="register-pass"
+              placeholder="Senha"
               autocomplete="new-password"
               required
             />
@@ -70,6 +74,7 @@
             <button type="submit" id="register-button">Criar conta</button>
             <p class="msg" id="register-msg" role="status"></p>
           </form>
+          </section>
         </div>
       </section>
     </main>
