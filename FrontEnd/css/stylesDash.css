@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    border: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+  
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 50px;
+  background-color: #10243b;
+  color: rgba(255, 255, 0, 0.75);
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.nave{
+    display: flex;
+    flex-direction: column;
+    width: 20vh;
+    right: 100vh;
+    background-color: #10243b;
+    border-right: 7px solid #10243b;
+
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgb(3, 0, 12);
+    padding: 20px;
+}
+
+.KPIs{
+
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#kpi{
+    width: 24%;
+    height: 90%;
+    background-color: #303c49;
+    border-radius: 10px;
+}
+
+
+.graficos-grandes{
+    background-color: #303c49;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 40vh;
+}
+
+.grafi{
+    background-color: #f2eaea30;
+    height: 250px;
+    border-radius: 10px;
+    height: 38vh;
+    
+}
